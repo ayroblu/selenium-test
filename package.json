@@ -1,0 +1,16 @@
+{
+  "name": "selenium-test",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "chromedriver": "^2.25.1",
+    "geckodriver": "^1.6.1",
+    "mocha": "^3.4.2",
+    "selenium-webdriver": "^3.0.0-beta-3",
+    "sinon": "^1.17.6"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "mocha '**/*.test.js'"
+  }
+}

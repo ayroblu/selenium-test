@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title= 'Resemble check'
+
+    meta(name="theme-color" content="#00aba9")
+    block head
+  body
+    block header
+      header
+        h1 Is image similar
+      section.images
+        img(src='/static/diff.png')
+        img(src='/static/pre.png')
+        img(src='/static/post.png')
+        button.cancel Cancel
+        button.change Change
+    block content
+    block scripts
+      script(src='/static/buttons.js')
+
+

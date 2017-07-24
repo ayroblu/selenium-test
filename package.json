@@ -9,8 +9,14 @@
     "selenium-webdriver": "^3.0.0-beta-3",
     "sinon": "^1.17.6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.15.3",
+    "node-resemble-js": "^0.2.0",
+    "pug": "^2.0.0-rc.2",
+    "rimraf": "^2.6.1"
+  },
   "scripts": {
+    "start": "node src/server.js",
     "test": "mocha 'src/*.test.js'"
   }
 }

@@ -11,6 +11,6 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "mocha '**/*.test.js'"
+    "test": "mocha 'src/*.test.js'"
   }
 }

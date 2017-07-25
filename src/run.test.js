@@ -5,6 +5,7 @@ const webdriver = require('selenium-webdriver')
 
 const app = require('./app')
 const Page = require('./Page')
+const runPageTest = require('./pageTest')
 const verifyScreenshot = require('./screenshotHandler')
 
 // function checkScreenshot -> if exists read it, if !== then open page
@@ -16,7 +17,7 @@ describe('Just a page', ()=>{
   let driver, page, port
 
   before(function(){
-    this.timeout(100000)
+    this.timeout(4000)
     driver = new webdriver.Builder()
       //.withCapabilities(webdriver.Capabilities.firefox())
       .withCapabilities(webdriver.Capabilities.chrome())
@@ -30,24 +31,12 @@ describe('Just a page', ()=>{
   })
 
   beforeEach(function(){
-    this.timeout(1000000)
+    this.timeout(5000)
     page = new Page(driver, 'https://benlu.nz', '/')
     return page.setup()
   })
 
   it('check exists', async ()=>{
-    const needsChecking = await verifyScreenshot(driver, 'benlu.nz')
-    if (needsChecking){
-      const figure = new Page(driver, 'http://localhost:9324')
-      await figure.setup()
-      // wait until an element appears
-      const response = await figure.waitForButtons()
-      if (response === 'change') {
-        needsChecking.saveScreenshot()
-        return
-      }
-      assert.equal(response, 'cancel')
-    }
-    //await new Promise(y=>setTimeout(y, 30000))
+    await runPageTest(driver, 'benlu.nz')
   }).timeout(100000)
 })
